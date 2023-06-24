@@ -1,0 +1,14 @@
+{{- define "main" -}}
+    <article class="post">
+        <header class="header">
+            <h1>{{ .Title }}</h1>
+        </header>
+        <main class="content">
+            {{ .Content }}
+        </main>
+        <footer class="footer text-xs">
+            {{ .Scratch.Set "includeDate" true -}}
+            {{ partial "content/gitref.html" . -}}
+        </footer>
+    </article>
+{{ end }}

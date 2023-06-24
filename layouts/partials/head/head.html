@@ -1,0 +1,20 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{ partial "head/seo.html" . }}
+    {{ partial "head/schema.html" . }}
+    <title>{{ block "title" . -}}
+        {{- if .IsHome -}}
+            {{ printf "%s - %s" "Home" .Site.Title }}
+        {{- else -}}
+            {{ with .Page.Title }}{{ printf "%s - %s" . site.Title }}{{ end -}}
+        {{- end -}}
+    {{- end }}</title>
+    <link rel="shortcut icon" href="{{ .Site.Params.favicon | absURL }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ partialCached "head/css.html" . }}
+    {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s RSS feed" />` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+    {{ end -}}
+    {{ partialCached "head/script.html"  . }}
+</head>

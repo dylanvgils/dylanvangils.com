@@ -1,0 +1,14 @@
+{{- $description := default .Site.Params.description .Summary -}}
+{{- $keywords := delimit (default slice .Keywords) "," -}}
+{{- /* SEO */ -}}
+    <!-- Meta Tags -->
+    <meta name="author" content="{{ .Site.Author.name }}" />
+    <meta name="description" content="{{ $description | plainify }}" />
+    {{ if $keywords }}<meta name="keywords" content="{{ $keywords }}" />{{ end -}}
+
+    <!-- Opengraph -->
+    {{ template "_internal/opengraph.html" . }}
+
+    <!-- Twitter Cards -->
+    {{ template "_internal/twitter_cards.html" . }}
+{{- /* end */ -}}

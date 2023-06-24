@@ -1,0 +1,2 @@
+{{- $readTime := math.Ceil (div (countwords .Content) 200.0) -}}
+<span class="text-secondary">posted on {{ .PublishDate.Format "2 January 2006" }} &bull; {{ $readTime }} minute read</span>

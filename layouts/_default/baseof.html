@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="{{ .Site.Language }}">
+    {{- partial "head/head.html" . -}}
+    <body>
+        <div class="flex flex-col min-h-screen justify-between">
+            {{- partial "topbar/topbar.html" . -}}
+            <main class="w-full h-full max-w-screen-md mx-auto mb-auto py-14 px-3">
+            {{- block "main" . }}{{- end -}}
+            </main>
+            {{- partial "footer/footer.html" . -}}
+        </div>
+        {{- partialCached "footer/script.html" . -}}
+    </body>
+</html>

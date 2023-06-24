@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply text-primary;
+        @apply dark:bg-stone-950;
+    }
+
+    h1, h2, h3 {
+        @apply text-primary;
+    }
+
+    h1 {
+        @apply text-4xl font-bold;
+    }
+
+    h2 {
+        @apply text-2xl font-bold;
+    }
+
+    h3 {
+        @apply text-xl font-bold;
+    }
+}
+
+@layer components {
+    .link {
+        @apply hover:underline hover:cursor-pointer;
+    }
+
+    .topbar {
+        @apply bg-gray-50 md:leading-10 md:h-[72px] dark:bg-zinc-900;
+
+        .link {
+            @apply underline-offset-4;
+        }
+    }
+
+    .post {
+        @apply space-y-4;
+
+        .header,
+        .content,
+        .footer {
+            @apply px-2 space-y-4;
+        }
+
+        .content {
+            @apply text-justify;
+
+            h1, h2, h3, h4, h5, h6 {
+                @apply pt-4;
+            }
+
+            .link {
+                @apply underline;
+                @apply text-sky-600;
+                @apply dark:text-sky-500;
+            }
+
+            ul {
+                @apply pl-9 list-disc;
+            }
+
+            blockquote {
+                @apply ml-5 pl-3 pr-8 py-1;
+                @apply border-l-4 border-coral;
+            }
+        }
+
+        .footer {
+            @apply border-primary text-secondary;
+            @apply py-2 border-t-2;
+        }
+    }
+
+    .btn-social {
+        @apply w-12 h-12 leading-[44px];
+        @apply border-solid border-2 border-gray-500 rounded-full;
+        @apply hover:cursor-pointer hover:bg-gray-500 hover:text-coral;
+        @apply dark:border-zinc-600 dark:hover:bg-zinc-600;
+        @apply transition duration-300 hover:ease-in-out;
+
+        > a {
+            @apply block;
+        }
+    }
+}
+
+@layer utilities {
+    .text-primary {
+        @apply text-black;
+        @apply dark:text-gray-200;
+    }
+
+    .text-secondary {
+        @apply text-gray-500;
+        @apply dark:text-gray-400;
+    }
+
+    .border-primary {
+        @apply border-gray-200;
+        @apply dark:border-zinc-600;
+    }
+}
+
+/**
+* Syntax Highlighting
+**/
+p code {
+    @apply py-0.5 px-1.5 rounded bg-gray-200;
+    @apply dark:bg-gunmetal;
+}
+
+.highlight div,
+.highlight pre {
+    @apply rounded overflow-x-auto;
+}
+
+// Highlighting of code blocks without line numbers
+.highlight > pre {
+    & code > span > span {
+        @apply pr-2;
+    }
+
+    @apply p-2;
+}
+
+// Highlighting of code blocks with line numbers
+.highlight div {
+    @apply py-2 pr-2;
+}

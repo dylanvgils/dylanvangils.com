@@ -1,0 +1,3 @@
+{{- $externalLink := strings.HasPrefix .Destination "http" -}}
+<a class="link" href="{{ .Destination | absURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $externalLink }} rel="external"{{ end }}>{{ .Text }}</a>
+{{- /* end */ -}}

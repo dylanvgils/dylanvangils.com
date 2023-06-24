@@ -1,0 +1,56 @@
+{{- define "main" -}}
+{{ $readTime := math.Ceil (div (countwords .Content) 200.0) }}
+
+    <article class="post">
+        <header class="header space-y-1">
+            <h1>{{ .Title }}</h1>
+            {{ partial "content/post-metadata.html" . -}}
+        </header>
+        <main class="content">
+            {{ .Content }}
+        </main>
+        <footer class="footer text-sm border-b-2">
+            <ul class="list-none">
+                <li>
+                    <span class="mr-2 inline-block">
+                        <i class="fa-regular fa-folder fa-fw"></i>
+                    </span>
+                    <ul class="inline-flex space-x-1 list-none">
+                        {{ range .Params.Categories }}
+                        <li class="link">
+                            <a href="/categories/{{ . | urlize}}">{{ . }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </li>
+                <li>
+                    <span class="mr-2 inline-block">
+                        <i class="fa-solid fa-tags fa-fw"></i>
+                    </span>
+                    <ul class="inline-flex space-x-1 list-none">
+                        {{ range .Params.Tags }}
+                        <li class="link">
+                            #<a href="/tags/{{ . | urlize}}">{{ . }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </li>
+                <li>
+                    <span class="mr-2">
+                        <i class="fa-regular fa-file-lines fa-fw"></i>
+                    </span>
+                    {{ .Content | countwords }} words
+                </li>
+                <li>
+                    <span class="mr-2">
+                        <i class="fa-regular fa-pen-to-square fa-fw"></i>
+                    </span>
+                    {{ .Lastmod.Format "02-01-2006 15:04" }}
+                </li>
+                <li>
+                    {{ partial "content/gitref.html" . -}}
+                </li>
+            </ul>
+        </footer>
+    <article>
+{{- end -}}

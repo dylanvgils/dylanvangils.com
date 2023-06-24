@@ -1,0 +1,70 @@
+###
+# Site metadata
+#
+baseURL = 'https://dylanvangils.com'
+languageCode = 'en-us'
+title = 'DylanvanGils'
+copyright = "© {currentYear}"
+
+# Hugo options
+enableGitInfo = true
+enableRobotsTXT = true
+
+[author]
+  name = "Dylan van Gils"
+  email = "me@dylanvangils.nl"
+
+###
+# Params
+#
+[params]
+  favicon = "/favicon.ico"
+  description = "Blog description"
+
+  [params.git]
+    repo = "https://github.com/dylanvgils/hugo-site"
+
+  [params.social]
+    github = "https://github.com/dylanvgils"
+    linkedIn = "https://linkedin.com/in/dylanvangils"
+
+###
+# Plugin settings
+#
+[frontmatter]
+  date = ["date", "publishDate", "lastmod"]
+  lastmod = ["lastmod", ":git", "date", "publishDate"]
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.highlight]
+    codeFences = true
+    noClasses = true
+    lineNos = true
+    style = "onedark"
+    tabWidth = 4
+
+[minify]
+  [minify.tdewolff.html]
+    keepQuotes = true
+
+###
+# Navigation settings
+#
+[permalinks]
+  posts = '/:year/:month/:title/'
+
+[menu]
+  [[menu.main]]
+      name = "Home"
+      url = "/"
+      weight = 10
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 20
+  [[menu.main]]
+      name = "Blog"
+      url = "/posts"
+      weight = 30

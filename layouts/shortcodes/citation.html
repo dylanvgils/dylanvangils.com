@@ -1,0 +1,10 @@
+<blockquote>
+    <div class="space-y-4">
+        {{ .Inner | markdownify }}
+    </div>
+    {{- with .Get "source" -}}
+    <div class="pt-3 text-right text-xs">
+        source: {{ . | markdownify }}
+    </div>
+    {{- end -}}
+</blockquote>

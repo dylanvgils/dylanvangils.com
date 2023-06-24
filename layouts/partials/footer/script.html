@@ -1,0 +1,2 @@
+{{- $script := resources.Get "js/bundle.js" | js.Build | minify | fingerprint }}
+<script type="text/javascript" src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>

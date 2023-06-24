@@ -1,0 +1,37 @@
+{{- $rfc3339Format := "2006-01-02T15:04:05Z07:00" -}}
+{{- $publishDate := .PublishDate.Format $rfc3339Format -}}
+{{- $author := .Site.Author.name -}}
+{{- /* Schema */ -}}
+    <script type="application/ld+json">
+        {{ if eq .Type "posts" -}}
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "url": {{ .Permalink }},
+            "headline": {{ .Title }},
+            "dateCreated": {{ $publishDate }},
+            "datePublished": {{ $publishDate }},
+            "dateModified": {{ .Lastmod.Format $rfc3339Format }},
+            "description": {{ .Summary }},
+            "publisher": {
+                "@type": "Person",
+                "name": {{ $author }},
+                "url": {{ .Site.BaseURL }}
+            },
+            "author": {
+                "@type": "Person",
+                "name": {{ $author }},
+                "url": {{ .Site.BaseURL }}
+            }
+        }
+        {{- else -}}
+        {
+            "@context": "http://schema.org",
+            "@type": "{{ if .IsHome }}WebSite{{ else }}WebPage{{end}}",
+            "name": "{{ .Site.Title }}",
+            "url": {{ .Permalink }},
+            "description": {{ default .Site.Params.description .Summary }}
+        }
+        {{- end }}
+    </script>
+{{- /* end */ -}}

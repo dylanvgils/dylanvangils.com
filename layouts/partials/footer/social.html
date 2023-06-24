@@ -1,0 +1,22 @@
+<div class="flex flex-row gap-x-2 text-2xl justify-center">
+    <span class="btn-social">
+        <a rel="external" href="{{ .Site.Params.social.github }}">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </span>
+    <span class="btn-social">
+        <a rel="external" href="{{ .Site.Params.social.linkedIn }}">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+    </span>
+    <span class="btn-social">
+        <a rel="noopener noreferrer" href="mailto:{{ .Site.Author.email }}">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+    </span>
+    <span class="btn-social">
+        <a rel="alternate" type="application/rss+xml" href="/index.xml" title="{{ .Site.Title }}">
+            <i class="fa-solid fa-rss"></i>
+        </a>
+    </span>
+</div>
