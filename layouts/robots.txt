@@ -1,7 +1,2 @@
 User-agent: ia_archiver
 Disallow: /
-
-User-agent: *
-{{ range .Pages -}}
-Disallow: {{ .RelPermalink }}
-{{ end -}}

@@ -22,7 +22,7 @@ enableRobotsTXT = true
   description = "Blog description"
 
   [params.git]
-    repo = "https://github.com/dylanvgils/hugo-site"
+    repo = "https://github.com/dylanvgils/dylanvangils.com"
 
   [params.social]
     github = "https://github.com/dylanvgils"
