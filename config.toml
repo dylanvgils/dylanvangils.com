@@ -19,7 +19,7 @@ enableRobotsTXT = true
 #
 [params]
   favicon = "/favicon.ico"
-  description = "Blog description"
+  description = "Blogs and notes about things that interest me."
 
   [params.git]
     repo = "https://github.com/dylanvgils/dylanvangils.com"
