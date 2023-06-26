@@ -85,7 +85,7 @@ Now we ended up with an easy way to install or uninstall dotfiles in the home di
 
 
 ## Managing dependencies
-Only checking-in configuration files don't add any value. Somehow you want to be able to manage dependencies, such as:
+Only checking in configuration files doesn't add any value. Somehow you want to be able to manage dependencies, such as:
 
 - zsh plugins
 - tmux plugins
