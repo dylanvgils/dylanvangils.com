@@ -12,7 +12,7 @@ enableRobotsTXT = true
 
 [author]
   name = "Dylan van Gils"
-  email = "me@dylanvangils.nl"
+  email = "me@dylanvangils.com"
 
 ###
 # Params
@@ -57,14 +57,14 @@ enableRobotsTXT = true
 
 [menu]
   [[menu.main]]
-      name = "Home"
-      url = "/"
-      weight = 10
+    name = "Home"
+    url = "/"
+    weight = 10
   [[menu.main]]
     name = "About"
     url = "/about"
     weight = 20
   [[menu.main]]
-      name = "Blog"
-      url = "/posts"
-      weight = 30
+    name = "Blog"
+    url = "/posts"
+    weight = 30
