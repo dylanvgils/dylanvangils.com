@@ -10,12 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.4.17",
-    "cssnano": "^6.0.3",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.1",
     "postcss": "^8.4.33",
     "postcss-cli": "^11.0.0",
-    "postcss-import": "^16.0.0",
-    "rimraf": "^5.0.5",
+    "postcss-import": "^16.1.0",
+    "rimraf": "^5.0.7",
     "tailwindcss": "^3.4.3"
   },
   "dependencies": {
