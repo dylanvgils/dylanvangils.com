@@ -19,12 +19,20 @@ updates:
       interval: "weekly"
     open-pull-requests-limit: 5
     groups:
+      fe-frameworks:
+        applies-to: version-updates
+        patterns:
+          - "flowbite"
+          - "tailwindcss"
       fortawesome:
         applies-to: version-updates
         patterns:
-        - "@fortawesome*"
-      postcss:
+          - "@fortawesome*"
+      tools:
         applies-to: version-updates
         patterns:
-        - "postcss*"
+          - "autoprefixer"
+          - "cssnano"
+          - "postcss*"
+          - "rimraf"
 
