@@ -10,16 +10,16 @@ copyright = "© {currentYear}"
 enableGitInfo = true
 enableRobotsTXT = true
 
+[author]
+  name = "Dylan van Gils"
+  email = "me@dylanvangils.com"
+
 ###
 # Params
 #
 [params]
   favicon = "/favicon.ico"
   description = "Blogs and notes about things that interest me."
-  
-  [params.author]
-    name = "Dylan van Gils"
-    email = "me@dylanvangils.com"
 
   [params.git]
     repo = "https://github.com/dylanvgils/dylanvangils.com"
