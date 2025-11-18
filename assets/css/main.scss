@@ -1,6 +1,27 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/index.css";
+@plugin "flowbite/plugin";
+
+@source "../../content/**/*.md";
+@source "../../layouts/**/*.html";
+@source "../../node_modules/flowbite/**/*.js";
+
+@theme {
+    --color-coral: #f44336;
+    --color-gunmetal: #282c34;
+    --font-family-sans: "Roboto", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@utility text-primary {
+    @apply text-black dark:text-gray-200;
+}
+
+@utility text-secondary {
+    @apply text-gray-500 dark:text-gray-400;
+}
+
+@utility border-primary {
+    @apply border-gray-200 dark:border-zinc-600;
+}
 
 @layer base {
     body {
@@ -86,23 +107,6 @@
         > a {
             @apply block;
         }
-    }
-}
-
-@layer utilities {
-    .text-primary {
-        @apply text-black;
-        @apply dark:text-gray-200;
-    }
-
-    .text-secondary {
-        @apply text-gray-500;
-        @apply dark:text-gray-400;
-    }
-
-    .border-primary {
-        @apply border-gray-200;
-        @apply dark:border-zinc-600;
     }
 }
 
