@@ -36,7 +36,7 @@ jobs:
           HUGO_BASEURL: ${{ vars.BASE_URL }}
         run: hugo --gc --minify
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: public
           path: ./public
